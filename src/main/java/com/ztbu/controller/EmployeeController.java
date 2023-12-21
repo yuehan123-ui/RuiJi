@@ -119,8 +119,8 @@ public class EmployeeController {
     @PutMapping("/update")
     public Result<String> update(HttpServletRequest request,@RequestBody Employee employee){
         log.info("修改员工信息：{}",employee.getUsername());
-        Long id = (Long) request.getSession().getAttribute("employee");
-/*        employee.setUpdateUser(id);
+/*        Long id = (Long) request.getSession().getAttribute("employee");
+        employee.setUpdateUser(id);
         employee.setUpdateTime(LocalDateTime.now());*/
         employeeService.updateById(employee);
         return Result.success("员工信息修改成功");
