@@ -9,11 +9,14 @@ spring:
     multipart:
       max-file-size: 10MB  # ??????????
       max-request-size: 100MB # ?????????? ??????????????
-  redis:
-    host: 127.0.0.1
+  redis: # redis相关配置
+    host: 127.0.0.1 # 本机
     port: 6379
-    password:
-    database: 0
+    password:      # 本机无密码
+    database: 0    # 工作数据库为0号数据库
+  cache:
+    redis:
+      time-to-live: 180000  # 设置缓存数据过期时间为30分钟
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #控制台输出日志

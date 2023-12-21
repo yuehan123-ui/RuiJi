@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 //@MapperScan(basePackages = "com.ztbu.**.mapper") 扫描mapper接口 与 @Mapper 二选一 接口较多可不写@Mapper 写MapperScan
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ServletComponentScan  // 扫描过滤器
 @EnableTransactionManagement // 事务
 @SpringBootApplication
+@EnableCaching // 开启SpringCache缓存注解功能
 /**
  * springBootApplication = SpringBootConfiguration + @ComponentScan + @EnableAutoConfiguration
  *     启动类    =                    配置类        + 组件自动扫描      +    自动配置
